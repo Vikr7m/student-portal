@@ -1,0 +1,24 @@
+.main{
+  background-color: var(--color-bg);
+}
+
+.maincontainer{
+  display: flex;
+  height: calc(100vh - [header height]);
+  padding: 20px;
+  box-sizing: border-box;
+  gap: 20px;
+}
+.maincontent{
+  background-color: var(--color-bg);
+  flex-grow: 1;
+  padding: 0;
+  
+  
+}
+
+@media (max-width: 768px) {
+  .maincontent {
+    z-index: 998;
+  }
+}

@@ -1,0 +1,71 @@
+.container{
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 10px;
+    border-radius: 12px;
+    box-shadow: var(--shadow-md);
+    background-color: var(--color-secondary);
+    color: var(--color-bg);
+}
+.profile{
+    display: flex;
+    justify-content: space-between;
+}
+.photo{
+    width: 80px;
+    height: 100px;
+    border-radius: 10px;
+    background-image: url("user-profile.jpg");
+}
+.photoName{
+    display: flex;
+    gap: 10px;
+}
+.sem{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    padding: 6px;
+    gap: 20px;
+}
+.sem h4{
+    font-size: 14px;
+    font-weight: 600;
+}
+.profile h2{
+    font-size: 18px;
+    font-weight: 500;
+}
+.profile h3{
+    font-size: 14px;
+    font-weight: 400;
+}
+.studentValues{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.atendanse{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.attendanceValue{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.attendanceValue h4{
+    font-size: 11px;
+    font-weight: 300;
+}
+.attendanceValue h5{
+    font-size: 8px;
+    font-weight: 100;
+}
+

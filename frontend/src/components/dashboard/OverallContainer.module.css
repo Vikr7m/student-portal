@@ -1,0 +1,50 @@
+.container{
+    min-width: 12rem;
+    max-width: 25rem;
+    height: 7rem;
+    padding: 10px;
+    display: flex;
+    flex-grow: 1;
+    flex: 1;
+    justify-content: space-between;
+    align-items: end;
+    border-radius: 12px;
+    color: var(--color-bg);
+    background-color: var(--color-secondary);
+    box-shadow: var(--shadow-card);
+}
+.insideValue{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.nameValue{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.nameValue h1{
+    font-size: var(--font-h3);
+    font-weight: 600;
+}
+.nameValue h3{
+    font-size: var(--font-body);
+    font-weight: 500;
+}
+.insideValue p{
+    font-size: var(--font-xs);
+    font-weight: 400;
+}
+.naviagetIcon{
+    height: 24px;
+    width: 24px;
+    background-color: var(--color-bg);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.naviagetIcon:hover{
+    background-color: #4C85AE;
+    box-shadow: var(--shadow-md);
+}

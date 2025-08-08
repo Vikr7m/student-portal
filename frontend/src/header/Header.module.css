@@ -1,0 +1,28 @@
+.header{
+    width: 100%;
+    height: fit-content;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding : 10px 20px;
+    box-shadow: var(--shadow-md);
+    box-sizing: border-box;
+}
+.collegeDetails{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.logo{
+    width: 40px;
+    height: 40px;
+}
+.college h1{
+    font-size: var(--font-body-lg);
+    font-weight: 600;
+}
+.college h3{
+    font-size: var(--font-sm);
+    font-weight: 400;
+}

@@ -1,0 +1,27 @@
+.dashboardcontainer{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 16px;
+    gap: 20px;
+}
+.studentDetails{
+    display: flex;
+    min-width: 70%;
+    max-width: 70%;
+    flex-direction: column;
+    row-gap: 16px;
+    gap: 10px;
+}
+
+@media (max-width: 768px) {
+   .dashboardcontainer{
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 900px) {
+   .studentDetails{
+    min-width: 100%;
+  }
+}

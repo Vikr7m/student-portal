@@ -1,0 +1,41 @@
+
+.container{
+  width: 100%;
+  height: 150px;
+  padding: 10px;
+  padding-right: 70px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  background-color: #ffffff;
+  text-align: start;
+  box-sizing: border-box;
+  box-shadow: var(--shadow-md);
+}
+.studentdetails img{
+  height :100%;
+  width:120px;
+  border-radius: 12px;
+}
+.studentdetails{
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+}
+.name{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+}
+.name h1{
+  font-size: var(--font-h3);
+}
+.motivation h2,.motivation h3{
+  font-size: var(--font-h1);
+  font-weight: 600;
+  color: var(--color-secondary);
+}
+.motivation d{
+  color: black;
+}
