@@ -4,6 +4,7 @@
     flex-wrap: wrap;
     row-gap: 16px;
     gap: 20px;
+    background-color: aquamarine;
 }
 .studentDetails{
     display: flex;
