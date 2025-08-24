@@ -1,0 +1,44 @@
+.timetable{
+    width: 28%;
+    min-width: 280px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.description{
+    text-align: center;
+}
+.dayorder{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.periodContainers{
+    width: 100%;
+}
+
+/* Timetable.module.css */
+
+@media (max-width: 768px) {
+  .timetable {
+    padding: 12px;
+  }
+
+  .dayorder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .dayorder h3,
+  .dayorder h4 {
+    font-size: 1rem;
+  }
+
+  .description {
+    text-align: center;
+    font-size: 0.95rem;
+  }
+}

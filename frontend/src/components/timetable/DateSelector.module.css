@@ -1,0 +1,49 @@
+.container{
+    width: 100%;
+}
+
+.dateList{
+    display: flex;
+    gap: 0.5em;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    width: 100%;
+}
+
+.dateHeader{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 10px;
+}
+.arrow1 ,.arrow2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.arrow1{
+    transform: rotate(180deg);
+}
+.selected, .notSelected{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: var(--shadow-card);
+}
+.selected{
+    background-color: var(--color-secondary);
+    color: antiquewhite;
+}
+
+.notSelected{
+    background-color: #ffffff;
+    color: var(--color-secondary);
+}
+
+.notSelected:hover {
+  background-color: #8bc7a9;
+}
+

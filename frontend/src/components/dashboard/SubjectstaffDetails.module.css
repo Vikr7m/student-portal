@@ -1,0 +1,11 @@
+h1{
+    font-size: var(--font-body-lg);
+}
+.subjectstaffcontainers{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
