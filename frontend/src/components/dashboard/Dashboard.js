@@ -11,6 +11,7 @@ import StudentDetailsMobile from "./StudentDetailsMobile";
 function Dashboard() {
   const navigate = useNavigate();
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+  const token = localStorage.getItem("token");
 
   useEffect(() => {
     function handleResize() {
@@ -27,7 +28,7 @@ function Dashboard() {
   const [dashboardData, setDashboardData] = useState([]);
 
   useEffect(() => {
-    const token = localStorage.getItem("token");
+    
 
     if (!token) {
       navigate('/login'); // redirect if token is missing
