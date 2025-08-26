@@ -21,7 +21,7 @@
 }
 
 .formGroup label {
-  font-size: 16px;
+  font-size: var(--font-body);
   font-weight: 500;
 }
 
@@ -37,6 +37,21 @@
 .formGroup textarea {
   min-height: 80px;
   resize: vertical;
+}
+
+.certificateTypes{
+  display: flex;
+  justify-content: space-between;
+  padding-right: 30%;
+}
+.type{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.type h2{
+  font-size: var(--font-body);
 }
 
 .uploadBox {

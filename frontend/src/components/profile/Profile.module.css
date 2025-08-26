@@ -1,12 +1,115 @@
-.attendance{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    margin-top: 200px;
+.profileContent{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+}
+.profilecard {
+    height: fit-content;
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 5rem;
+  flex-direction: row;
+  
 }
 
-.attendance h1{
-    font-size: var(--font-display);
+/* Top Section */
+.topSection {
+    gap: 20px;
+}
+.top{
+    display: flex;
+    gap: 20px;
+}
+
+.profilePic {
+  width: 120px;
+  height: 142px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.basicInfo h2 {
+  font-size: var(--font-h2);
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.basicInfo p {
+  margin: 2px 0;
+  color: #333;
+  font-size: var(--font-body);
+}
+
+/* Bottom Section */
+.bottomSection {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.academicInfo,
+.personalInfo {
+  flex: 1;
+}
+.personalInfo{
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+}
+
+.academicInfo p,
+.personalInfo p {
+  margin: 6px 0;
+  font-size: var(--font-body);
+}
+
+.academicInfo span,
+.personalInfo span {
+  font-weight: 600;
+  color: #004d40;
+}
+
+.semester {
+  margin-left: 20px;
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+  .bottomSection {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .topSection {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .profilePic {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+@media (max-width: 480px) {
+  .profilecard {
+    padding: 14px;
+    flex-direction: column;
+  }
+
+  .basicInfo h2 {
+    font-size: 18px;
+  }
+
+  .basicInfo p,
+  .academicInfo p,
+  .personalInfo p {
+    font-size: 13px;
+  }
 }

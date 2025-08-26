@@ -6,30 +6,32 @@ import { useNavigate } from "react-router-dom";
 function CertificateEdit() {
   const navigate = useNavigate();
   const [error, setError] = useState("");
-  const [title, setTitle] = useState("");
-  const [description, setDescription] = useState("");
-  const [link, setLink] = useState("");
-  const [technologies, setTechnologies] = useState("");
+  const [name, setName] = useState("");
+  const [issuedOrganiziation, setIssuedOrganiziation] = useState("");
+  const [date, setDate] = useState("");
+  const [type, setType] = useState("");
   const [coverImage, setCoverImage] = useState(null);
   const [preview, setPreview] = useState(null);
   const [success, setSuccess] = useState("");
+  
 
   const token = localStorage.getItem("token");
+  const batchno = localStorage.getItem("batchNo");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     const formData = new FormData();
-    formData.append("title", title);
-    formData.append("description", description);
-    formData.append("link", link);
-    formData.append("technologies", technologies);
+    formData.append("name", name);
+    formData.append("issuedOrganiziation", issuedOrganiziation);
+    formData.append("date", date);
+    formData.append("type", type);
     if (coverImage) {
       formData.append("coverImage", coverImage);
     }
 
     try {
-      await axios.post("http://localhost:8081/student/edit-project", formData, {
+      await axios.post(`http://localhost:8081/student/${batchno}/add-certificate`, formData, {
         headers: {
           Authorization: `Bearer ${token}`,
           "Content-Type": "multipart/form-data",
@@ -37,7 +39,6 @@ function CertificateEdit() {
       });
       setSuccess("Certificate uploaded successfully!");
       setCoverImage(null);
-      navigate('/profile');
     } catch (err) {
       console.error(err);
       setError("Project uploading failed");
@@ -53,19 +54,19 @@ function CertificateEdit() {
           <input
             type="text"
             placeholder="Eg: Java Programming"
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
+            value={name}
+            onChange={(e) => setName(e.target.value)}
           />
         </div>
 
         {/* Technologies */}
         <div className={styles.formGroup}>
-          <label>Technologies</label>
+          <label>Issued By</label>
           <input
             type="text"
-            placeholder="Choose the tags"
-            value={technologies}
-            onChange={(e) => setTechnologies(e.target.value)}
+            placeholder="Issued Organization eg: Google"
+            value={issuedOrganiziation}
+            onChange={(e) => setIssuedOrganiziation(e.target.value)}
           />
         </div>
 
@@ -74,10 +75,42 @@ function CertificateEdit() {
           <label>Completed Date</label>
           <input
             type="date"
-            placeholder="Github, website or any project links"
-            value={link}
-            onChange={(e) => setLink(e.target.value)}
+            placeholder="Enter the Issued Date"
+            value={date}
+            onChange={(e) => setDate(e.target.value)}
           />
+        </div>
+
+        <div className={styles.formGroup}>
+          <label>Type of Your Certificate</label>
+          <div className={styles.certificateTypes}>
+            <div className={styles.type}>
+              <input
+                type="checkbox"
+                checked={type === "course"}
+                onChange={() => setType(type === "course" ? "" : "course")}
+              />
+              <h2>Course</h2>
+            </div>
+
+            <div className={styles.type}>
+              <input
+                type="checkbox"
+                checked={type === "achievement"}
+                onChange={() => setType(type === "achievement" ? "" : "achievement")}
+              />
+              <h2>Achievement</h2>
+            </div>
+
+            <div className={styles.type}>
+              <input
+                type="checkbox"
+                checked={type === "others"}
+                onChange={() => setType(type === "others" ? "" : "others")}
+              />
+              <h2>Others</h2>
+            </div>
+          </div>
         </div>
 
         {/* Cover Image Upload Section */}

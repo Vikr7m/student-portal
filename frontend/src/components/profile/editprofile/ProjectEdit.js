@@ -45,7 +45,6 @@ function ProjectEdit() {
       });
       setSuccess("Project uploaded successfully!");
       setCoverImage(null);
-      navigate('/profile');
     } catch (err) {
       console.error(err);
       setError("Project uploading failed");
