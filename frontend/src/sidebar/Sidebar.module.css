@@ -1,8 +1,6 @@
 .sidebar {
   min-width: 200px;
-  min-height : 100vh;
   flex-grow: 0;
-  background-color: #ffffff;
   border-right: 1px solid #e5e5e5;
   padding: 1rem;
   border-radius: 10px;
@@ -50,17 +48,40 @@
   align-items: center;
   justify-content: center;
 }
+.sidebarIcon{
+    width: 24px;
+    height: 24px;
+  }
 @media (max-width: 768px) {
   .sidebar {
-    width: 100px;
+    min-width: fit-content;
     z-index: 999;
-    min-width: 100px;
+    padding: 0.5rem;
   }
+  .ulist{
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .navName{
+    display: none;
+  }
+  
 }
 @media (max-width: 480px) {
   .sidebar {
-    display: none;
+    min-width: fit-content;
     z-index: 999;
-    min-width: 100px;
+    padding: 0.5rem;
+  }
+  .ulist{
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .notselected, .selected{
+    padding: 4px 6px;
+  }
+  .sidebarIcon{
+    width: 16px;
+    height: 16px;
   }
 }

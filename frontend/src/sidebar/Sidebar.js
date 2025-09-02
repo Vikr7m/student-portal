@@ -22,6 +22,8 @@ function Sidebar() {
 
 
   const navigate = useNavigate();
+  const width = 24;
+  const height = 24;
 
   const [selectedPage, setSelectedPage] = useState("dashboard");
 
@@ -30,7 +32,7 @@ function Sidebar() {
     id: "dashboard",
     label: "Dashboard",
     icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 24 24"><path fill="none" stroke="currentColor" strokeWidth={2} d="M4 5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1zm10 0a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1zM4 16a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1zm10-3a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v6a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1z"></path>
+      <svg xmlns="http://www.w3.org/2000/svg" width={width} height={height} viewBox="0 0 24 24"><path fill="none" stroke="currentColor" strokeWidth={2} d="M4 5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1zm10 0a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1zM4 16a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1zm10-3a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v6a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1z"></path>
       </svg>
     ),
   },
@@ -86,8 +88,14 @@ if (screenWidth > 768){
           setSelectedPage(item.id);
           navigate(`/${item.id}`);}
           } className = {selectedPage === item.id ? styles.selected : styles.notselected}>
-            {item.icon}
-            {item.label}
+            <div className={styles.sidebarIcon}>
+               {item.icon}
+            </div>
+           
+            <div className={styles.navName}>
+              {item.label}
+            </div>
+            
           </li>
         ))}
       </ul>
