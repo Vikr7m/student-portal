@@ -1,9 +1,21 @@
 import styles from './OverallContainer.module.css';
-
+import { useNavigate } from 'react-router-dom';
 
 function OverallContainer(props){
+    const navigate = useNavigate();
+    const handleNavigate = () => {
+        if (props.name === "CGPA"){
+            navigate('/marks');
+        }
+        else if ( props.name ===  "Attendance"){
+            navigate('/attendance');
+        }
+        else {
+            navigate ('/payments');
+        }
+    }
     return(
-        <div className={styles.container}>
+        <div onClick={handleNavigate} className={styles.container}>
             <div className={styles.insideValue}>
                 <div className={styles.nameValue}>
                     <h3>{props.name}</h3>

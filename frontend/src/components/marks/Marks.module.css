@@ -1,12 +1,10 @@
 .attendance{
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
-    margin-top: 200px;
-}
-
-.attendance h1{
-    font-size: var(--font-display);
+    gap: 40px;
+    padding: 20px;
 }

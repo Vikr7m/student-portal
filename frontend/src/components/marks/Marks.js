@@ -1,12 +1,14 @@
 
 import styles from './Marks.module.css';
+import OverallMarks from './OverallMarks';
+import SemWiseMarks from './SemWiseMarks';
 
 
 function Marks(){
     return(
         <div className={styles.attendance}>
-            <h1>Marks Section</h1>
-            <p>Yet to be developed</p>
+            <OverallMarks cgpa = {8.1234} />
+            <SemWiseMarks/>
         </div>
     );
 }

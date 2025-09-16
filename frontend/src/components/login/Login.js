@@ -68,7 +68,7 @@ export default function Login() {
             </div>
             <div className={styles.password}>
               <input
-                type={showPassword ? "text" : "password"}
+                type={showPassword ? "password" : "text"}
                 placeholder="Password"
                 value={password}
                 onChange={e => setPassword(e.target.value)}

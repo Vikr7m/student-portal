@@ -1,0 +1,93 @@
+.overall{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: var(--shadow-lg);
+    padding: 20px 40px;
+    flex-grow: 1;
+    height: 100%;
+
+}
+.overall h1{
+    font-size: var(--font-body-lg);
+}
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+.progressBar{
+    height: 120px;
+    width: 120px;
+}
+
+.progressBar h1{
+    color: var(--color-primary);
+    font-size: var(--font-sm);
+    margin-top: -40px;
+}
+
+.totalHours{
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 40%;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: var(--shadow-card);
+    background-color: var(--color-bg);
+}
+.totalHours h1{
+    font-size: var(--font-h2);
+}
+.totalHours h2{
+    font-size: var(--font-body-lg);
+    font-weight: 500;
+}
+.totalHours label{
+    font-size: var(--font-body-lg);
+}
+.presentAbsent{
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    gap: 20px;
+}
+.preAbs{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: var(--shadow-card);
+    background-color: var(--color-bg);
+}
+.preAbs h2{
+    font-size: var(--font-h2);
+}
+.preAbs label{
+    font-size: var(--font-body-lg);
+    font-weight: 500;
+}
+
+@media (max-width: 780px){
+    .container{
+        justify-content: center;
+    }
+    .presentAbsent{
+        flex-grow: 1;
+    }
+    .totalHours{
+        flex-grow: 1;
+    }
+    .preAbs{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}

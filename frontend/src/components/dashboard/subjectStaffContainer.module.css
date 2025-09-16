@@ -8,11 +8,12 @@
     padding: 10px;
     border-radius: 12px;
     background-color: #ffffff;
-    box-shadow: var(--shadow-card);
+    box-shadow: var(--shadow-sm);
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 .subjectstaffcontainer:hover {
   background-color: #f0f0f0;
+  box-shadow: var(--shadow-lg);
 }
 .Subjectstaff{
     height: 100%;

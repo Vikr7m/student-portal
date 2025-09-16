@@ -1,40 +1,12 @@
 .attendance{
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    margin-top: 200px;
+    gap: 30px;
 }
-
-.attendance h1{
-    font-size: var(--font-display);
-}
-.overallContainer{
+.overall{
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
     gap: 20px;
-}
-
-.subContainer{
-    width: 200px;
-    height: 200px;
-    padding: 10px;
-    background-color: #34d399;
-    border-radius: 12px;
-    box-shadow: var(--shadow-card);
-    gap: 10px;
-}
-
-.progressBar {
-  width: 100%;
-  height: 12px;
-  background: #e5e7eb;
-  border-radius: 6px;
-  overflow: hidden;
-}
-
-.progress {
-  height: 100%;
-  background: linear-gradient(90deg, #34d399, #10b981);
-  transition: width 0.4s ease;
 }

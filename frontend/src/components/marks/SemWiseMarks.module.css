@@ -1,0 +1,45 @@
+.overallContainer{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: var(--shadow-card);
+    border-radius: 10px;
+}
+
+.semesters ul{
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+.semesters li{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 40px;
+    border-radius: 20px;
+    background-color: var(--color-primary);
+    color: var(--color-bg);
+}
+.semesters{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+.semDenotar{
+    width: 100%;
+    height: 15px;
+    background-color: rgb(197, 195, 193);
+    border-radius: 8px;
+}
+.semDenotarBar{
+    margin-left: 100px;
+    width: 50px;
+    height: 100%;
+    background-color: var(--color-primary);
+    border-radius: 8px;
+}
