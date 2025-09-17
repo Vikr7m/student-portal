@@ -1,15 +1,34 @@
 import React from "react";
 import styles from "./ProjectSection.module.css";
 import { Navigate, useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 const ProjectSection = ({projects}) => {
 
   const navigate = useNavigate();
+  const [menuOpenId, setMenuOpenId] = useState(null);
   
 
   const handleProjectEdit = () => {
         navigate('/project-edit');
     }
+
+    const handleDelete = (id) => {
+    const token = localStorage.getItem("token");
+    fetch(`http://localhost:8081/student/delete-certificate/${id}`, {
+      method: "DELETE",
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    })
+      .then((res) => {
+        if (!res.ok) throw new Error("Failed to delete certificate");
+        // Optionally refetch or optimistically update UI:
+        console.log("Deleted certificate:", id);
+      })
+      .catch((err) => console.error(err))
+      .finally(() => setMenuOpenId(null));
+  };
 
   return (
     <div className={styles.container}>
@@ -18,6 +37,7 @@ const ProjectSection = ({projects}) => {
         {projects?.map((project, index) => (
           <div key={index} className={styles.card}>
             
+            <button onClick={() => handleDelete(project.id)}>Delete</button>
             <img
               src={`data:image/jpeg;base64,${project.coverImage}`}
               alt={project.title}

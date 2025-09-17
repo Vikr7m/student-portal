@@ -1,10 +1,14 @@
 import React from "react";
 import styles from "./CertfificateSection.module.css";
 import { Navigate, useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 const CertificatesSection = ({ certificates}) => {
 
     const navigate = useNavigate();
+    const [menuOpenId, setMenuOpenId] = useState(null);
+    const [confirmOpen, setConfirmOpen] = useState(false);
+    const [pendingDeleteId, setPendingDeleteId] = useState(null);
   // Dummy handlers for now
   const handleView = (id) => {
     console.log("View certificate:", id);
@@ -18,13 +22,35 @@ const CertificatesSection = ({ certificates}) => {
         navigate('/certificate-add');
   };
 
+  const handleDelete = (id) => {
+    const token = localStorage.getItem("token");
+    fetch(`http://localhost:8081/student/delete-certificate/${id}`, {
+      method: "DELETE",
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    })
+      .then((res) => {
+        if (!res.ok) throw new Error("Failed to delete certificate");
+        // Optionally refetch or optimistically update UI:
+        console.log("Deleted certificate:", id);
+      })
+      .catch((err) => console.error(err))
+      .finally(() => setMenuOpenId(null));
+  };
+  
+
   return (
     <div className={styles.container}>
       <h2 className={styles.heading}>Certificates / Courses</h2>
       <div className={styles.grid}>
         {certificates?.map((cert, index) => (
           <div key={index} className={styles.card}>
-            <h3 className={styles.title}>{cert.name}</h3>
+            <div className={styles.header}>
+              <h3 className={styles.title}>{cert.name}</h3>
+              <button onClick={() => handleDelete(cert.id)}>⋮</button>
+            </div>
+            
             <img
               src={`data:image/jpeg;base64,${cert.certificateFile}`}
               alt={cert.title}
